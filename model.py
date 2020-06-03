@@ -31,7 +31,7 @@ class Generator(nn.Module):
         ----------------------------------------------------------------------------------------
         
         Set Parameter:
-            a           : Octave Coefficient                                 ( default : 1/8   )
+            a           : Octave Coefficient                                 ( default : 1/4   )
             n           : number of residual block                           ( default : 9     )
             
         ----------------------------------------------------------------------------------------
@@ -120,7 +120,7 @@ class Discriminator(nn.Module):
         ----------------------------------------------------------------------------------------
         
         Set Parameter:
-            a           : Octave Coefficient                                 ( default : 1/8   )
+            a           : Octave Coefficient                                 ( default : 1/4   )
             
         ----------------------------------------------------------------------------------------
         """        
