@@ -55,8 +55,8 @@ class dataset(Dataset):
     
     
     
-def saveimage(image, epoch, path, figsize = (25,25), x=5, label = True, name = True, t = 1):
-    path = path + '{}/{}_{:03}.jpg'.format(t,t, epoch)
+def saveimage(image, epoch, path, num = 1, figsize = (25,25), x=5, label = True, name = True):
+    path = path + '{}/{}_{:03}.jpg'.format(num, num, epoch)
     fig, ax = plt.subplots(x, x, figsize=figsize)
     
     image = np.transpose(image.cpu().detach().numpy(), (0, 2, 3, 1))
@@ -68,7 +68,7 @@ def saveimage(image, epoch, path, figsize = (25,25), x=5, label = True, name = T
 
     if name:
         del(name)
-        name = '{} Try Epoch {}'.format(t, epoch)
+        name = '{} - Epoch {}'.format(num, epoch)
     if label:
         fig.text(0.5, 0.04, name, ha='center', fontsize = 15)
     plt.savefig(path)
