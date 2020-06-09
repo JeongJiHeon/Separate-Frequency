@@ -73,9 +73,9 @@ class FirstOctaveConv(nn.Module):
 
 
 
-class OctaveCBR(nn.Module):
+class OctaveCNR(nn.Module):
     def __name__(self):
-        return 'OctaveCBR'
+        return 'OctaveCNR'
     def __init__(self,in_channels, out_channels, kernel_size=(3,3),alpha=0.5, stride=1, padding=1, dilation=1,
                 groups=1, bias=False, norm_layer=nn.BatchNorm2d, relu = nn.LeakyReLU(0.2)):
         super(OctaveCBR, self).__init__()
@@ -91,9 +91,9 @@ class OctaveCBR(nn.Module):
         return x_h, x_l
 
 
-class OctaveCB(nn.Module):
+class OctaveCN(nn.Module):
     def __name__(self):
-        return 'OctaveCB'
+        return 'OctaveCN'
     def __init__(self, in_channels, out_channels, kernel_size=(3,3), alpha=0.5, stride=1, padding=1, dilation=1,
                 groups=1, bias=False, norm_layer=nn.BatchNorm2d):
         super(OctaveCB, self).__init__()
@@ -110,9 +110,9 @@ class OctaveCB(nn.Module):
         return x_h, x_l
 
 
-class FirstOctaveCBR(nn.Module):
+class FirstOctaveCNR(nn.Module):
     def __name__(self):
-        return 'FirstOctaveCBR'
+        return 'FirstOctaveCNR'
     def __init__(self, in_channels, out_channels, kernel_size=(3,3),alpha=0.5, stride=1, padding=1, dilation=1,
                 groups=1, bias=False,norm_layer=nn.BatchNorm2d, relu = nn.LeakyReLU(0.2)):
         super(FirstOctaveCBR, self).__init__()

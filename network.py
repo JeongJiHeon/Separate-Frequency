@@ -116,11 +116,11 @@ class Discriminator(nn.Module):
         dim = 32
         self.block1 = FirstOctaveR(in_channels = 3, out_channels = dim, 
                                    kernel_size = 4, stride = 2, padding = 1, alpha = a, bias = True)
-        self.block2 = OctaveCBR(in_channels = dim, out_channels = dim*2, 
+        self.block2 = OctaveCNR(in_channels = dim, out_channels = dim*2, 
                                 kernel_size = 4, stride = 2, padding = 1, alpha = a, bias = True, norm_layer = nn.InstanceNorm2d)
-        self.block3 = OctaveCBR(in_channels = dim*2, out_channels = dim*4, 
+        self.block3 = OctaveCNR(in_channels = dim*2, out_channels = dim*4, 
                                 kernel_size = 4, stride = 2, padding = 1, alpha = a, bias = True, norm_layer = nn.InstanceNorm2d)
-        self.block4 = OctaveCBR(in_channels = dim*4, out_channels = dim*8, 
+        self.block4 = OctaveCNR(in_channels = dim*4, out_channels = dim*8, 
                                 kernel_size = 4, stride = 2, padding = 1, alpha = a, bias = True, norm_layer = nn.InstanceNorm2d)
 
 
