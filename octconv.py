@@ -78,7 +78,7 @@ class OctaveCNR(nn.Module):
         return 'OctaveCNR'
     def __init__(self,in_channels, out_channels, kernel_size=(3,3),alpha=0.5, stride=1, padding=1, dilation=1,
                 groups=1, bias=False, norm_layer=nn.BatchNorm2d, relu = nn.LeakyReLU(0.2)):
-        super(OctaveCBR, self).__init__()
+        super(OctaveCNR, self).__init__()
         self.conv = OctaveConv(in_channels,out_channels,kernel_size, alpha, stride, padding, dilation, groups, bias)
         self.bn_h = norm_layer(int(out_channels*(1-alpha)))
         self.bn_l = norm_layer(int(out_channels*alpha))
@@ -96,7 +96,7 @@ class OctaveCN(nn.Module):
         return 'OctaveCN'
     def __init__(self, in_channels, out_channels, kernel_size=(3,3), alpha=0.5, stride=1, padding=1, dilation=1,
                 groups=1, bias=False, norm_layer=nn.BatchNorm2d):
-        super(OctaveCB, self).__init__()
+        super(OctaveCN, self).__init__()
 
         self.conv = OctaveConv(in_channels, out_channels, kernel_size, alpha, stride, padding, dilation,
                                 groups, bias)
@@ -115,7 +115,7 @@ class FirstOctaveCNR(nn.Module):
         return 'FirstOctaveCNR'
     def __init__(self, in_channels, out_channels, kernel_size=(3,3),alpha=0.5, stride=1, padding=1, dilation=1,
                 groups=1, bias=False,norm_layer=nn.BatchNorm2d, relu = nn.LeakyReLU(0.2)):
-        super(FirstOctaveCBR, self).__init__()
+        super(FirstOctaveCNR, self).__init__()
         self.conv = FirstOctaveConv(in_channels,out_channels,kernel_size, alpha,stride,padding,dilation,groups,bias)
         self.bn_h = norm_layer(int(out_channels * (1 - alpha)))
         self.bn_l = norm_layer(int(out_channels * alpha))
