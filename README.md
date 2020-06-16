@@ -1,3 +1,3 @@
-# Seperate Frequency Generative Adverserial Network (KCC2020)
+# Separating Frequency Generative Adverserial Network (KCC2020)
 
 
